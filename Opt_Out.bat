@@ -104,18 +104,18 @@ echo 24. ALL DONE!
 
 set /p m=Type 1, 2, or 3 then press ENTER: 
 if %m%==1 goto BEENVERIFIED
-if %m%==2 goto
-if %m%==3 goto
-if %m%==4 goto
-if %m%==5 goto
-if %m%==6 goto
+if %m%==2 goto INTELIUS
+if %m%==3 goto LOOKUP
+if %m%==4 goto INTELIUS
+if %m%==5 goto MYLIFE
+if %m%==6 goto PEEKYOU
 if %m%==7 goto
 if %m%==8 goto
-if %m%==9 goto
+if %m%==9 goto INTELIUS
 if %m%==10 goto
 if %m%==11 goto
 if %m%==12 goto
-if %m%==13 goto
+if %m%==13 goto INTELIUS
 if %m%==14 goto
 if %m%==15 goto
 if %m%==16 goto
@@ -157,7 +157,95 @@ echo  several days later to confirm that they removed
 echo  your listing.
 pause
 
-: COMPLETE
+:INTELIUS
+echo.
+echo This site requires a fax to the following number
+echo 425-974-6194
+echo.
+echo Check out the following template for assistance
+pause
+cls
+echo To: (425)974-6194
+echo From: 
+echo.
+echo.
+echo As per your privacy policy, 
+echo      please remove my listing from Intelius,Spock, iSearch,
+echo ZabaSearch, PublicRecords, PeopleLookUp, PhonesBook, DateCheck,
+echo LookupAnyone, and all other affiliated people search sites.
+echo.
+echo Thank you for your help with this personal security issue.
+echo.
+echo.
+echo Sincerely,
+echo.
+echo -%First_Name% %Middle_Name% %Last_Name%.
+echo.
+echo.
+echo.
+pause
+
+LOOKUP:
+echo.
+echo Lookup.com is pretty simple
+echo. 
+echo Search for your listing on LookUp.com. You can identify a listing 
+echo by the blue and black circle icon to the left of the listing. Note that 
+echo other search sites' information is aggregated below, but it doesn't count 
+echo as a LookUp profile.
+echo.
+echo Next, open their opt-out page. Fill in first name, last name, the URL of the 
+echo LookUp profile you found for yourself, email, phone, and address to complete 
+echo the opt-out request. We recommend using a masked email to protect your personal 
+echo email but still receive confirmation emails.
+echo.
+echo 1. Open Lookup.com
+echo 2. Open Opt-Out Page
+echo 3. Just do it all for me
+echo 4. exit 
+echo.
+set /p m=Type 1, 2, or 3 then press ENTER: 
+if %m%==1 goto %Default_Browser% http://www.lookup.com/
+if %m%==2 goto %Default_Browser% http://www.lookup.com/optout.php
+if %m%==3 goto **INSERTSCRIPTHERE*
+if %m%==4 goto COMPLETE
+pause
+
+:MYLIFE
+echo Difficulty Rating: HARD
+echo.
+echo Call MyLife at (888) 704-1900 and press 2 to speak to an operator. 
+echo Have the following information on hand:
+echo Name
+echo age
+echo date of birth
+echo email
+echo current address
+echo one previous address. 
+echo. 
+echo Tell them that you want your listing removed and provide the information 
+echo that they ask for. Once they confirm removal, the listing will be off the
+echo site in 7-10 days.
+echo.
+echo While you're on the phone, you should also ask them to remove any Wink.com 
+echo profile that may exist for you. MyLife.com and Wink.com share their databases.
+pause
+
+:PEEKYOU
+Difficulty Rating: MEDIUM
+
+echo Search for yourself on PeekYou. If you find a listing, go to their opt-out page here.
+echo Fill in the required fields, and under "Actions" select "Remove my entire listing.
+echo Under "Reason for removal," select whichever applies to you (we prefer 'Identity theft').
+echo Paste the numbers at the end of your profile's URL in the "Unique ID" field,
+echo fill in the CAPTCHA, and you're all set.
+echo.
+echo You'll get an immediate email confirming that you've sent in your opt-out and a
+echo second email up to a few days or weeks later to tell you it's been deleted.
+echo.
+pause
+
+:COMPLETE
 echo now we need to stop this from happening again
 echo alittle education goes a long way
 echo more to follow on this section in the future
