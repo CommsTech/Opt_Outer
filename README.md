@@ -1,4 +1,10 @@
 # Opt_Outer
+
+## I still need to add the following and tweak the .bat 
+
+http://www.whitepages.com/suppression_requests
+
+
 Automate the Opt_Out Process... Kinda
 
 Removal from internet web sites 
